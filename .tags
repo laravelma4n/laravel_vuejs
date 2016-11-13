@@ -1,0 +1,34 @@
+aliases	/Users/ricardo/projects/crud-vue/config/app.php	/^  | This array of class aliases will be registered when this application$/;"	class	line:169
+Client	/Users/ricardo/projects/crud-vue/app/Client.php	/^class Client extends Model$/;"	class	line:7
+table	/Users/ricardo/projects/crud-vue/app/Client.php	/^    protected $table='clients';$/;"	variable	line:9
+table	/Users/ricardo/projects/crud-vue/app/Client.php	/^    protected $table='clients';$/;"	variable	line:9
+fillable	/Users/ricardo/projects/crud-vue/app/Client.php	/^    protected $fillable=[$/;"	variable	line:10
+fillable	/Users/ricardo/projects/crud-vue/app/Client.php	/^    protected $fillable=[$/;"	variable	line:10
+html	/Users/ricardo/projects/crud-vue/public/template/css/sticky-footer-navbar.css	/^html {$/;"	function	line:3
+body	/Users/ricardo/projects/crud-vue/public/template/css/sticky-footer-navbar.css	/^body {$/;"	function	line:7
+.footer	/Users/ricardo/projects/crud-vue/public/template/css/sticky-footer-navbar.css	/^.footer {$/;"	function	line:11
+body > .container	/Users/ricardo/projects/crud-vue/public/template/css/sticky-footer-navbar.css	/^body > .container {$/;"	function	line:25
+.container .text-muted	/Users/ricardo/projects/crud-vue/public/template/css/sticky-footer-navbar.css	/^.container .text-muted {$/;"	function	line:28
+.footer > .container	/Users/ricardo/projects/crud-vue/public/template/css/sticky-footer-navbar.css	/^.footer > .container {$/;"	function	line:32
+code	/Users/ricardo/projects/crud-vue/public/template/css/sticky-footer-navbar.css	/^code {$/;"	function	line:37
+ClientController	/Users/ricardo/projects/crud-vue/app/Http/Controllers/ClientController.php	/^class ClientController extends Controller$/;"	class	line:9
+index	/Users/ricardo/projects/crud-vue/app/Http/Controllers/ClientController.php	/^    public function index(){$/;"	function	line:11
+CreateClientTable	/Users/ricardo/projects/crud-vue/database/migrations/2016_11_11_195211_create_client_table.php	/^class CreateClientTable extends Migration$/;"	class	line:6
+up	/Users/ricardo/projects/crud-vue/database/migrations/2016_11_11_195211_create_client_table.php	/^  public function up() {$/;"	function	line:8
+down	/Users/ricardo/projects/crud-vue/database/migrations/2016_11_11_195211_create_client_table.php	/^  public function down() {$/;"	function	line:18
+ClientController	/Users/ricardo/projects/crud-vue/app/Http/Controllers/Api/ClientController.php	/^class ClientController extends Controller$/;"	class	line:9
+index	/Users/ricardo/projects/crud-vue/app/Http/Controllers/Api/ClientController.php	/^    public function index()$/;"	function	line:11
+clients	/Users/ricardo/projects/crud-vue/app/Http/Controllers/Api/ClientController.php	/^        $clients = Client::all();$/;"	variable	line:13
+store	/Users/ricardo/projects/crud-vue/app/Http/Controllers/Api/ClientController.php	/^    public function store(Request $request)$/;"	function	line:16
+edit	/Users/ricardo/projects/crud-vue/app/Http/Controllers/Api/ClientController.php	/^    public function edit($id){$/;"	function	line:21
+client	/Users/ricardo/projects/crud-vue/app/Http/Controllers/Api/ClientController.php	/^      $client=Client::findOrFail($id);$/;"	variable	line:22
+update	/Users/ricardo/projects/crud-vue/app/Http/Controllers/Api/ClientController.php	/^    public function update(Request $request,$id)$/;"	function	line:25
+client	/Users/ricardo/projects/crud-vue/app/Http/Controllers/Api/ClientController.php	/^        $client=Client::findOrFail($id);$/;"	variable	line:28
+destroy	/Users/ricardo/projects/crud-vue/app/Http/Controllers/Api/ClientController.php	/^    public function destroy($id)$/;"	function	line:35
+client	/Users/ricardo/projects/crud-vue/app/Http/Controllers/Api/ClientController.php	/^        $client=Client::findOrFail($id);$/;"	variable	line:37
+ready	/Users/ricardo/projects/crud-vue/resources/views/client/index.blade.php	/^    ready: function () {$/;"	jsfunction	line:61
+list	/Users/ricardo/projects/crud-vue/resources/views/client/index.blade.php	/^      list: function () {$/;"	jsfunction	line:66
+store	/Users/ricardo/projects/crud-vue/resources/views/client/index.blade.php	/^      store: function () {$/;"	jsfunction	line:75
+edit	/Users/ricardo/projects/crud-vue/resources/views/client/index.blade.php	/^      edit: function(id){$/;"	jsfunction	line:93
+update	/Users/ricardo/projects/crud-vue/resources/views/client/index.blade.php	/^      update: function (id) {$/;"	jsfunction	line:111
+delete	/Users/ricardo/projects/crud-vue/resources/views/client/index.blade.php	/^      delete: function (id) {$/;"	jsfunction	line:129
