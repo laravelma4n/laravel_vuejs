@@ -7,7 +7,7 @@ Route::get('/', function () {
 Route::group(['prefix'=>'client'],function(){
     Route::get('index','ClientController@index');
     Route::get('create','ClientController@create');
-    Route::get('edit/{id}','ClientController@edit');
+  
 });
 
 Route::group(['prefix' => 'api','namespace' => 'Api'], function () {
