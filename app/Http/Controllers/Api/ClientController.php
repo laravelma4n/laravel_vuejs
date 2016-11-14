@@ -37,7 +37,7 @@ class ClientController extends Controller
         $client->apepat=$request->apepat;
         $client->apemat=$request->apemat;
         $client->email=$request->email;
-        $client->country_id=$request->country-_id;
+        $client->country_id=$request->country_id;
         $client->save();
     }
     public function destroy($id)
