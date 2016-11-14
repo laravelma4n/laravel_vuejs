@@ -10,12 +10,19 @@ class ClientController extends Controller
 {
     public function index()
     {
-        $clients = Client::all();
+        $clients = Client::with('country')->get();
         return response()->json(compact('clients'));
     }
     public function store(Request $request)
     {
-        Client::create($request->input());
+      //  Client::create($request->input());
+      $client =new Client();
+      $client->name=$request->name;
+      $client->apepat=$request->apepat;
+      $client->apemat=$request->apemat;
+      $client->email=$request->email;
+      $client->country_id=$request->country_id; 
+      $client->save();
 
     }
     public function edit($id){

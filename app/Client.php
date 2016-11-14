@@ -12,6 +12,9 @@ class Client extends Model
       'apepat',
       'apemat',
       'email'
+
     ];
-    
+    public function country(){
+      return $this->belongsTo('App\Country');
+    }
 }

@@ -24,9 +24,14 @@
             <label for="email">Email</label>
             <input type="text" class="form-control" v-model="newClient.email" id="email" name="email" placeholder="Email">
           </div>
-
-
-
+          <div class="form-group">
+            <label for="email">Country</label>
+            <select class="form-control" v-model="newClient.country_id" id="country_id" name="country_id" >
+              <option v-for="country in countries" v-bind:value="country.id">
+                  @{{ country.name }}
+              </option>
+            </select>
+          </div>
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>

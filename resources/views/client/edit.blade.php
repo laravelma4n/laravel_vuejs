@@ -26,7 +26,14 @@
             <label for="email">Email</label>
             <input type="text" class="form-control" v-model="editClient.email" id="email" name="email" placeholder="Email">
           </div>
-
+          <div class="form-group">
+            <label for="email">Country</label>
+            <select class="form-control" v-model="editClient.country_id" id="country_id" name="country_id" >
+              <option v-for="country in countries" v-bind:value="country.id">
+                  @{{ country.name }}
+              </option>
+            </select>
+          </div>
 
 
         </div>

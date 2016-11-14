@@ -15,6 +15,7 @@
       <th>Apepat</th>
       <th>Apemat</th>
       <th>Email</th>
+      <th>Country</th>
       <th>Actions</th>
     </thead>
     <tbody>
@@ -24,6 +25,8 @@
         <td>@{{ client.apepat }}</td>
         <td>@{{ client.apemat }}</td>
         <td>@{{ client.email }}</td>
+        <td>@{{ client.country.name }}</td>
+
         <td>
           <button class="btn btn-primary btn-xs" @click="delete(client.id)">Del</button>
           <button class="btn btn-success btn-xs" @click="edit(client.id)" data-toggle="modal" data-target="#myModalEdit">Edit</button>
@@ -48,24 +51,37 @@
         name: '',
         apepat: '',
         apemat: '',
-        email:''
+        email:'',
+        country_id:''
       },
       editClient:{
         id:'',
         name:'',
         apepat:'',
         apemat:'',
-        email:''
-      }
+        email:'',
+        country_id:''
+      },
+      countries:[]
     },
     ready: function () {
-      this.list()
+      this.list(),
+      this.list_countries()
     },
     methods: {
       /* LIST ALL CLIENTS */
       list: function () {
         this.$http.get('/api/client').then((response) => {
+          //console.log(response)
           this.$set('clients', response.body.clients)
+          //console.log(response.body.clients)
+        }, (response) => {
+          console.log("errors"+response)
+        });
+      },
+      list_countries: function () {
+        this.$http.get('/api/country').then((response) => {
+          this.$set('countries', response.body.countries)
           //console.log(response.body.clients)
         }, (response) => {
           console.log("errors"+response)
@@ -78,8 +94,10 @@
           name:'',
           apepat:'',
           apemat:'',
-          email:''
+          email:'',
+          country_id:''
         }
+        //console.log(client);
         this.$http.post('/api/client/',client).then(function (response) {
           console.log(response)
           this.list()
@@ -92,14 +110,13 @@
       /* EDIT CLIENT */
       edit: function(id){
         this.$http.get('/api/client/'+id+'/edit').then((response) => {
-          //  this.$set('clients', response.body.clients)
           this.editClient.id=response.body.client.id
           this.editClient.name=response.body.client.name
           this.editClient.apepat=response.body.client.apepat
           this.editClient.apemat=response.body.client.apemat
           this.editClient.email=response.body.client.email
+          this.editClient.country_id=response.body.client.country_id
           console.log(response.body.client)
-          //console.log(response.body.clients)
         }, (response) => {
           console.log("errors"+response)
         });
@@ -114,7 +131,8 @@
           name:'',
           apepat:'',
           apemat:'',
-          email:''
+          email:'',
+          country_id:''
         }
 
         this.$http.patch('/api/client/'+id,client).then((response) => {
