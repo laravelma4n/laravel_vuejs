@@ -16,7 +16,7 @@
       <th>Apemat</th>
       <th>Email</th>
       <th>Country</th>
-      <th>Actions</th>
+      <th></th>
     </thead>
     <tbody>
       <tr v-for="client in clients">
@@ -26,22 +26,25 @@
         <td>@{{ client.apemat }}</td>
         <td>@{{ client.email }}</td>
         <td>@{{ client.country.name }}</td>
-
         <td>
           <button class="btn btn-primary btn-xs" @click="delete(client.id)">Del</button>
           <button class="btn btn-success btn-xs" @click="edit(client.id)" data-toggle="modal" data-target="#myModalEdit">Edit</button>
         </td>
       </tr>
-
-
     </tbody>
+
   </table>
+  <div class="text-center">
+
+
+  </div>
   @include('client.create')
   @include('client.edit')
 @endsection
 
 @section('scripts')
   <script type="text/javascript">
+
   Vue.http.headers.common['X-CSRF-TOKEN'] = document.querySelector('#token').getAttribute('content');
   new Vue({
     el: '#app',
@@ -63,26 +66,28 @@
         country_id:''
       },
       countries:[]
+
     },
-    ready: function () {
-      this.list(),
+
+    ready: function() {
+      this.list()
       this.list_countries()
     },
+
     methods: {
       /* LIST ALL CLIENTS */
       list: function () {
-        this.$http.get('/api/client').then((response) => {
-          //console.log(response)
+        this.$http.get('/api/client/').then((response) => {
+          console.log(response)
           this.$set('clients', response.body.clients)
-          //console.log(response.body.clients)
         }, (response) => {
           console.log("errors"+response)
         });
       },
+
       list_countries: function () {
         this.$http.get('/api/country').then((response) => {
           this.$set('countries', response.body.countries)
-          //console.log(response.body.clients)
         }, (response) => {
           console.log("errors"+response)
         });
@@ -97,7 +102,6 @@
           email:'',
           country_id:''
         }
-        //console.log(client);
         this.$http.post('/api/client/',client).then(function (response) {
           console.log(response)
           this.list()
@@ -105,7 +109,6 @@
         }, function (response) {
           console.log(response)
         });
-
       },
       /* EDIT CLIENT */
       edit: function(id){
@@ -120,9 +123,6 @@
         }, (response) => {
           console.log("errors"+response)
         });
-
-
-
       },
       /* UPDATE CLIENT */
       update: function (id) {
@@ -134,14 +134,12 @@
           email:'',
           country_id:''
         }
-
         this.$http.patch('/api/client/'+id,client).then((response) => {
           this.list()
           $('#myModalEdit').modal('hide')
         }, (response) => {
           console.log("errors"+response)
         });
-
       },
       /* DELETE CLIENT */
       delete: function (id) {
@@ -151,10 +149,8 @@
         }, function (response) {
           console.log(response)
         });
-
       },
     }
-
   });
   </script>
 @stop
